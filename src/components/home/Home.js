@@ -3,8 +3,18 @@ import "./Home.css";
 import Navbar from '/home/ubuntu/project/arweave/src/components/navbar/Navbar.js';
 import home1 from "/home/ubuntu/project/arweave/src/assets/home.png";
 
+
+
+
 function Home() {
+
+
+
+
+
+
   return (
+   
     <div className="home-img1">
 {/* <Navbar/> */}
 <div className="home-center">
@@ -17,6 +27,8 @@ function Home() {
   <img src={home1} width="626" height="409" alt="me"></img>    
 </div>
     </div>
+    
+  
   );
 }
 
