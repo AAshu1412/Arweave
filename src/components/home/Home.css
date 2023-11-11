@@ -13,8 +13,8 @@
 .home-img1{
     background-image: url("https://i.pinimg.com/564x/39/28/a9/3928a92299dd83aec8cdb4a4a075509f.jpg");
     background-repeat: no-repeat;  
-    /* background-attachment: fixed; */
-    background-position: 103% 35%;
+    background-size: 500px;
+    background-position: 103% 2%;
 }
 
 
@@ -50,6 +50,9 @@
 } 
 
 .home-img2{
-  margin-left: 600px;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 15px;
 }
 
