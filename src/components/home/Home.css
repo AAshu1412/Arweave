@@ -1,58 +1,54 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;1,700&family=Work+Sans:wght@200&display=swap" );
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;1,700&family=Work+Sans:wght@200&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto Mono", monospace;
-    /* font-family: 'Work Sans', sans-serif; */
-    color: aliceblue;
-  }
-
-.home-img1{
-    background-image: url("https://i.pinimg.com/564x/39/28/a9/3928a92299dd83aec8cdb4a4a075509f.jpg");
-    background-repeat: no-repeat;  
-    background-size: 500px;
-    background-position: 103% 2%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  /* font-family: 'Work Sans', sans-serif; */
+  color: aliceblue;
 }
 
-
-.home-center{
-     /* background-color: blueviolet; */
-    height: 42vh;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center ;
-    padding: 110px;  /*150*/
+.home-img1 {
+  background-image: url("https://i.pinimg.com/564x/39/28/a9/3928a92299dd83aec8cdb4a4a075509f.jpg");
+  background-repeat: no-repeat;
+  background-size: 500px;
+  background-position: 103% 2%;
 }
 
-
-.home-center h3::after{
-    content: "\a";
-    white-space: pre;
+.home-center {
+  /* background-color: blueviolet; */
+  height: 42vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  padding: 110px; /*150*/
 }
 
-.home-center h3{
-    /* background-color: blue; */
-    letter-spacing: 3px;
-    font-weight: bolder;
-    text-align: center;
+.home-center h3::after {
+  content: "\a";
+  white-space: pre;
 }
 
-.home-center h1{
-    /* background-color: red; */
-    margin: 50px;
-    text-align: center;
-    font-size: 50px;
-    font-weight: 900;
-} 
+.home-center h3 {
+  /* background-color: blue; */
+  letter-spacing: 3px;
+  font-weight: bolder;
+  text-align: center;
+}
 
-.home-img2{
-  display:flex;
+.home-center h1 {
+  /* background-color: red; */
+  margin: 50px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.home-img2 {
+  display: flex;
   flex-direction: row;
   justify-content: center;
   padding: 15px;
 }
-

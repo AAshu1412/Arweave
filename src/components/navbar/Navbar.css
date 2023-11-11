@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;1,700&family=Work+Sans:wght@200&display=swap" );
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;1,700&family=Work+Sans:wght@200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Work+Sans:wght@200&display=swap");
 
 * {
@@ -6,10 +6,8 @@
   padding: 0;
   box-sizing: border-box;
   /* font-family: "Roboto Mono", monospace; */
-  font-family: 'Work Sans', sans-serif;
-
+  font-family: "Work Sans", sans-serif;
 }
-
 
 html {
   font-size: 100%;
@@ -37,51 +35,47 @@ li {
   display: grid;
 }
 
-.logo h2{
-    font-size: 2rem;
-    font-weight: bolder;
-    color: #E40814;
-    font-family: 'Roboto Mono', monospace;
-  }
+.logo h2 {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: #e40814;
+  font-family: "Roboto Mono", monospace;
+}
 
 .header-content {
   grid-column: 3/4;
 }
 
-.header-content ul{
-        height: 8rem;
-        display: flex;
-        justify-content: space-around;
-         align-items: center;
-        
+.header-content ul {
+  height: 8rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .header-content ul li {
-    font-size: 1.25rem;
-    /* font-family: 'Work Sans', sans-serif; */
-    font-weight: bold;
-    color: aliceblue;
+  font-size: 1.25rem;
+  /* font-family: 'Work Sans', sans-serif; */
+  font-weight: bold;
+  color: aliceblue;
 }
 
-.connect-button{
-    grid-column: 4/5;
-      margin-left: auto;
-      margin-top: auto;
-      margin-bottom: auto;
+.connect-button {
+  grid-column: 4/5;
+  margin-left: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-.connect-button button{
-    background-color: #E40814;
-    color:#010001;
-    padding: auto auto auto auto;
-    width: 250px;
-    height: 45px;
-    font-size: 1.2rem;
-    border-style: solid;
-    border-color: #010001;
-    border-radius: 12px;
-    font-weight: bolder;
+.connect-button button {
+  background-color: #e40814;
+  color: #010001;
+  padding: auto auto auto auto;
+  width: 250px;
+  height: 45px;
+  font-size: 1.2rem;
+  border-style: solid;
+  border-color: #010001;
+  border-radius: 12px;
+  font-weight: bolder;
 }
-
-
-
