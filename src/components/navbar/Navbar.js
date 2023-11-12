@@ -5,14 +5,19 @@ import { ArweaveWebWallet } from "arweave-wallet-connector";
 
 function Navbar() {
   const connect_wallet = async () => {
+    try{
     const wallet = new ArweaveWebWallet({
-      name: "AAshu",
+      name: "AR-KYC",
       logo: "https://i.pinimg.com/564x/ed/64/96/ed64960142ea3db49cefad283f9f33c2.jpg",
     });
 
     wallet.setUrl("https://arweave.app");
     const no = await wallet.connect();
     console.log("dawdawdawdawd :::: " + no);
+  }
+  catch(err){
+   console.log("Wallet Disconnected without sign");
+  }
   };
 
   return (

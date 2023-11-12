@@ -10,10 +10,22 @@
 }
 
 .home-img1 {
-  background-image: url("https://i.pinimg.com/564x/39/28/a9/3928a92299dd83aec8cdb4a4a075509f.jpg");
+  /* background-image: url("https://i.pinimg.com/564x/39/28/a9/3928a92299dd83aec8cdb4a4a075509f.jpg");
   background-repeat: no-repeat;
   background-size: 500px;
-  background-position: 103% 2%;
+  background-position: 103% 2%; */
+
+  background-image: url("https://i.pinimg.com/564x/39/28/a9/3928a92299dd83aec8cdb4a4a075509f.jpg"),url("https://i.pinimg.com/564x/4c/f4/ac/4cf4ac317e6765460bab74fef60cb449.jpg");
+  background-repeat: no-repeat,no-repeat;
+  background-size: 500px,470px;
+  background-position: 103% 2%,0% 2%;
+}
+
+.home-img1 {
+  /* background-image: url("https://i.pinimg.com/564x/4c/f4/ac/4cf4ac317e6765460bab74fef60cb449.jpg");
+  background-repeat: no-repeat;
+  background-size: 500px;
+  background-position: 103% 2%; */
 }
 
 .home-center {
@@ -34,8 +46,9 @@
 .home-center h3 {
   /* background-color: blue; */
   letter-spacing: 3px;
-  font-weight: bolder;
+  font-weight: 900;
   text-align: center;
+  /* margin-right: 100px; */
 }
 
 .home-center h1 {

@@ -14,7 +14,7 @@ function Home() {
           Streamline KYC Processes Effortlessly.
         </h1>
         {/* Simplifying the complex, revolutionizing KYC tasks with ease. */}
-        <h3>
+        <h3 >
           Ar-KYC, a blockchain-based KYC solution on the innovative Arweave
           blockchain,
           <br /> combining security and decentralization for a robust identity
