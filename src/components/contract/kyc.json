@@ -1,5 +1,8 @@
 {
     "company":{},
-    "people":{}
+    "people":{},
+    "map1":{},
+    "num1":0,
+    "num2":0
    
 }
