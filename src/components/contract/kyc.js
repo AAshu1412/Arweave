@@ -1,7 +1,6 @@
 export async function handle(state, action) {
   const company = state.company; // state variable
   const people = state.people; // state variable
-  const owners = state.owners; // state variable
   const map1 = state.map1; // state variable
   const num1 = state.num1; // state variable
 

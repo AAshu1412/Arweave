@@ -1,51 +1,32 @@
+import SmartWeaveTester from "smartweave-testing";
+import { handle } from "/home/ubuntu/project/arweave/src/components/contract/kyc.js";
 
-const fs = require('fs');
-const path = require('path');
-const Arweave = require('arweave');
-const { SmartWeaveNodeFactory, LoggerFactory } = require("redstone-smartweave");
-const { default: ArLocal } = require("arlocal");
+// var SmartWeaveTester = require("smartweave-testing");
+// var { handle } = require( "/home/ubuntu/project/arweave/src/components/contract/kyc.js");
 
-// File: simple-demo.js
+const caller = "99999999999AAAASSSSSHUUUUUUUUUUUU";
 
-// Set up ArLocal
-(async () => {
-    const arLocal = new ArLocal(1985, false);
+const initialState = {
+  "comp":"goole",
+  "kyc":{
+    
+        "name":"ashu",
+        "age":3,
+        "nation":"japan",
+        "ph_no":34554,
+        "dl":"apopaks"
+      }
+    }
 
-    await arLocal.start();
-  })();
+const smartweave = new SmartWeaveTester(handle, initialState, caller);
 
+let input, result;
 
-   // Set up Arweave client
-  (async () => {
-   
-    const arweave = Arweave.init({
-        host: "localhost",
-        port: 1985,
-        protocol: "http"
-      });
-      const wallet = await arweave.wallets.generate();
-      const mine = () => arweave.api.get("mine");
-  })();
+const fun= async ()=>{
+  input = { function: "upload_kyc" };
+  result = await smartweave.execute(input);
+  console.log(result);
+}
 
-
-// Set up SmartWeave client
-LoggerFactory.INST.logLevel('error');
-const smartweave = SmartWeaveNodeFactory.memCached(arweave);
-
-// File: simple-demo.js
-
-const contractSrc = fs.readFileSync("/home/ubuntu/project/arweave/src/components/contract/kyc.js", "utf8");
-const initialState = fs.readFileSync("/home/ubuntu/project/arweave/src/components/contract/kyc.json", "utf8");
-
-// File: simple-demo.js
-(async () => {
-    const contractTxId = await smartweave.createContract.deploy({
-        wallet,
-        initState: initialState,
-        src: contractSrc
-      });
-      await mine();
-  })();
-
-
+fun();
 
