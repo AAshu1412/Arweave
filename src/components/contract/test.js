@@ -1,32 +1,46 @@
-import SmartWeaveTester from "smartweave-testing";
-import { handle } from "/home/ubuntu/project/arweave/src/components/contract/kyc.js";
+const fs = require('fs');
+const path = require('path');
+const Arweave = require('arweave');
+const { SmartWeaveNodeFactory, LoggerFactory } = require("redstone-smartweave");
+const { default: ArLocal } = require("arlocal");
 
-// var SmartWeaveTester = require("smartweave-testing");
-// var { handle } = require( "/home/ubuntu/project/arweave/src/components/contract/kyc.js");
+(async () => {
+  
+// Set up ArLocal
+const arLocal = new ArLocal(1984, false);
+await arLocal.start();
 
-const caller = "99999999999AAAASSSSSHUUUUUUUUUUUU";
+// Set up Arweave client
+const arweave = Arweave.init({
+  host: "localhost",
+  port: 1984,
+  protocol: "http"
+});
+const wallet = await arweave.wallets.generate();
+const mine = () => arweave.api.get("mine");
 
-const initialState = {
-  "comp":"goole",
-  "kyc":{
-    
-        "name":"ashu",
-        "age":3,
-        "nation":"japan",
-        "ph_no":34554,
-        "dl":"apopaks"
-      }
-    }
+// Set up SmartWeave client
+LoggerFactory.INST.logLevel('error');
+const smartweave = SmartWeaveNodeFactory.memCached(arweave);
 
-const smartweave = new SmartWeaveTester(handle, initialState, caller);
+const contractSrc = fs.readFileSync("/home/ubuntu/project/arweave/src/components/contract/kyc.js", "utf8");
+const initialState = fs.readFileSync("/home/ubuntu/project/arweave/src/components/contract/kyc.json", "utf8");
 
-let input, result;
+const contractTxId = await smartweave.createContract.deploy({
+  wallet,
+  initState: initialState,
+  src: contractSrc
+});
+await mine();
 
-const fun= async ()=>{
-  input = { function: "upload_kyc" };
-  result = await smartweave.execute(input);
-  console.log(result);
-}
+// Interacting with the contract
+const contract = smartweave
+  .contract(contractTxId)
+  .connect(wallet);
 
-fun();
+// Read state
+const state = await contract.readState();
+console.log("State before any interactions");
+console.log(JSON.stringify(state, null, 2));
 
+})();
