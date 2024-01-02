@@ -1,5 +1,7 @@
 import Arweave from 'arweave';
-import TestWeave from 'testweave-sdk';
+// import TestWeave from 'testweave-sdk';
+import pkg from 'testweave-sdk';
+const { TestWeave,TestWeaveRequest } = pkg;
 import { createContract, readContract, interactWrite, interactWriteDryRun } from 'smartweave';
 import fs from 'fs';
 
@@ -11,10 +13,10 @@ const arweave = Arweave.init({
   logging: false,
 }); 
 
-const testWeave = await TestWeave.init(arweave);
+const testWeave = await TestWeaveRequest.init(arweave);
 
 // import the sample contract init state
-import contractInitState from '/home/ubuntu/project/arweave/src/components/contract/kyc.json';
+import contractInitState from '/home/ubuntu/project/arweave/src/components/contract/kyc.json' assert { type: "json" };
 // load the contract as a string
 const contractSource = fs.readFileSync('/home/ubuntu/project/arweave/src/components/contract/kyc.js').toString();
 
