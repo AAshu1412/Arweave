@@ -1,7 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
-import { ArweaveWebWallet } from "arweave-wallet-connector";
+import { ArweaveWebWallet } from "arconnectorweave-wallet-";
 
 function Navbar() {
   const connect_wallet = async () => {
