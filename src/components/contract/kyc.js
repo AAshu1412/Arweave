@@ -104,6 +104,12 @@ export async function handle(state, action) {
       return { state };
     }
 
+    case "getCompDetails":{
+
+    return {result:state.comp};
+    
+    }
+
     default: {
       throw new ContractError("Unsupported contract function");
     }

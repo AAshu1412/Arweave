@@ -1,5 +1,5 @@
 {
-  "type":"module",
+  "type": "module",
   "name": "arweave",
   "version": "0.1.0",
   "private": true,
@@ -7,7 +7,6 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "arlocal": "^1.1.62",
     "arweave": "^1.14.4",
     "arweave-wallet-connector": "^1.0.2",
     "arweave-wallet-kit": "^1.0.3",
@@ -58,6 +57,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "arconnect": "^1.0.3"
+    "arconnect": "^1.0.3",
+    "arlocal": "^1.1.64"
   }
 }

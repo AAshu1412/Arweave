@@ -1,43 +1,59 @@
-import ArLocal from 'arlocal';
-import Arweave from 'arweave';
-import fs from 'fs';
-
+import ArLocal from "arlocal";
+import {
+  createContract,
+  writeContract,
+  readContractState,
+  viewContractState,
+} from "arweavekit/contract";
+import fs from "fs";
 
 (async () => {
   const arLocal = new ArLocal();
 
-  // create local testing environment
   await arLocal.start();
 
-  // your tests here
+  const key = JSON.parse(readFileSync("wallet.json").toString());
 
-  const arweave = Arweave.init({});
+  const contract = await createContract({
+    wallet: key,
+    initialState: fs.readFileSync(
+      "/home/ubuntu/project/arweave/src/components/contract/kyc.json",
+      "utf-8"
+    ),
+    contractSource: fs.readFileSync(
+      "/home/ubuntu/project/arweave/src/components/contract/kyc.js"
+    ),
+    environment: "local",
+  });
 
-// generate wallet
-const wallet = await arweave.wallets.generate()
-console.log(`Wallet == ${wallet}`);
+  console.log(`createcontract == ${contract}`);
 
-// get public address
-const paddress= await arweave.wallets.jwkToAddress(wallet.n);
-console.log(`Public Address == ${paddress}`);
+  const writeResult1 = await writeContract({
+    environment: "local",
+    contractTxId: contract.contractTxId,
+    wallet: key,
+    options: {
+      function: "company_reg",
+      comp: { name: "HDFC", category: "Bank" },
+    },
+  });
+  console.log(`Company Registration == ${writeResult1}`);
 
-// getting the winston (wei) present in address
-const winston= await arweave.wallets.getBalance(paddress);
-console.log(`Winston == ${winston}`);
+  const readResult1 = await readContractState({
+    environment: "local",
+    contractTxId: contract.contractTxId,
+  });
 
-// getting the AR present in address
-const ar= arweave.ar.winstonToAr(winston);
-console.log(`AR == ${ar}`);
+  console.log(`Read Result == ${readResult1}`);
 
-let data = fs.readFileSync('/home/ubuntu/project/arweave/src/components/contract/kyc.js');
-let resumeObject = JSON.parse("/home/ubuntu/project/arweave/src/components/contract/kyc.json");
+  const viewResult1 = await viewContractState({
+    environment: "local",
+    contractTxId: contract.contractTxId,
+    wallet: key,
+    options: { function: "getCompDetails" },
+  });
 
+  console.log(`View Result Of Company Registration == ${viewResult1}`);
 
-
-
-
-
-
-  // shut down testing environment
   await arLocal.stop();
-})(); 
+})();
