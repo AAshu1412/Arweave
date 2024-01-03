@@ -1,4 +1,5 @@
 import React from 'react';
+import "./Start.css";
 
 
 function Start(){
@@ -6,7 +7,26 @@ function Start(){
   
     return (
         <div>
-          <h1 style={{color:"red"}}>Startttttt</h1>
+          <nav className="start-main-nav">
+      
+      <div className="start-nav-content">
+        <ul>
+          <li>
+           Registration
+          </li>
+          <li>
+          User Details
+          </li>
+          <li>
+           Company Registration
+          </li>
+          <li>
+          Access Remove
+          </li>
+        </ul>
+      </div>
+     
+    </nav>
         </div>
         
       );

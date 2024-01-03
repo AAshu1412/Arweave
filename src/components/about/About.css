@@ -40,14 +40,11 @@
 }
 
 .subHead {
-                                                                                   /*  not working  */
+  /*  not working  */
   list-style-type: circle;
   color: white;
 }
 
 .subHead li h2 {
-
   margin-bottom: 15px;
 }
-
-
