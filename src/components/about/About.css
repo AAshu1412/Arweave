@@ -1,32 +1,53 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;1,700&family=Work+Sans:wght@200&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Work+Sans:wght@200&display=swap");
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   /* font-family: "Roboto Mono", monospace; */
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   color: aliceblue;
 }
 
-.abt{
-    background-color: red;
-    display: flex;
-    flex-direction: column;
-     /* padding-top:100px ; */
-     margin-top: 50px;
-     margin-left: 80px;
-     gap: 50px;
+.abt {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  /* padding-top:100px ; */
+  margin-top: 50px;
+  margin-left: 80px;
+  gap: 50px;
 }
 
-.abt li{
-    background-color: purple;
-    display: flex;
-    flex-direction: column;
+.abt li {
+  /* background-color: purple; */
+  display: flex;
+  flex-direction: column;
 }
 
-.abt li h1{
-     text-decoration: underline;
+.abt li h1 {
+  text-decoration: underline;
+  margin-bottom: 15px;
 }
+
+.abt li h2 {
+  margin-left: 20px;
+}
+
+.abt li h3 {
+  margin-left: 25px;
+}
+
+.subHead {
+                                                                                   /*  not working  */
+  list-style-type: circle;
+  color: white;
+}
+
+.subHead li h2 {
+
+  margin-bottom: 15px;
+}
+
+
