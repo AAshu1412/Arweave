@@ -12,7 +12,7 @@ import fs from "fs";
 
   await arLocal.start();
 
-  const key = JSON.parse(readFileSync("wallet.json").toString());
+  const key = JSON.parse(readFileSync("/home/ubuntu/project/arweave/wallet.json").toString());
 
   const contract = await createContract({
     wallet: key,
