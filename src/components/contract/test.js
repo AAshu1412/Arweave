@@ -1,55 +1,43 @@
+import ArLocal from 'arlocal';
 import Arweave from 'arweave';
-import TestWeave from 'testweave-sdk';
-// import pkg from 'testweave-sdk';
-// const { TestWeave,TestWeaveRequest } = pkg;
-import { createContract, readContract, interactWrite, interactWriteDryRun } from 'smartweave';
 import fs from 'fs';
 
-const arweave = Arweave.init({
-  host: 'localhost',
-  port: 1984,
-  protocol: 'http',
-  timeout: 20000,
-  logging: false,
-}); 
 
-const testWeave = await TestWeave.init(arweave);
+(async () => {
+  const arLocal = new ArLocal();
 
-// import the sample contract init state
-import contractInitState from '/home/ubuntu/project/arweave/src/components/contract/kyc.json' assert { type: "json" };
-// load the contract as a string
-const contractSource = fs.readFileSync('/home/ubuntu/project/arweave/src/components/contract/kyc.js').toString();
+  // create local testing environment
+  await arLocal.start();
 
-// create the contract and mine the transaction for creating it
-const c = await createContract(arweave, testWeave.rootJWK, contractSource, JSON.stringify(contractInitState));
-await testWeave.mine();
+  // your tests here
 
-// read the contract before performing any interaction
-const beforeTransaction = await readContract(arweave, c);
-console.log(`Before interact write: ${JSON.stringify(beforeTransaction)}`)
+  const arweave = Arweave.init({});
 
-// generate a wallet
-const jkw = await arweave.wallets.generate();
-const generatedAddr = await arweave.wallets.getAddress(jkw);
+// generate wallet
+const wallet = await arweave.wallets.generate()
+console.log(`Wallet == ${wallet}`);
 
-// interact with the contract
-const iwt = await interactWrite(arweave, testWeave.rootJWK, c, {
-  function: 'upload_kyc',
-  comp: "HDFC",
-  kyc:{
-    name:"Ashu",
-    age:19,
-    nation:"India",
-    ph_no:9149340127,
-    dl:"DL023948"
-  }
-}, [] , generatedAddr, '23999392')
-console.log(`Interact write transaction: ${JSON.stringify(iwt)}`);
+// get public address
+const paddress= await arweave.wallets.jwkToAddress(wallet.n);
+console.log(`Public Address == ${paddress}`);
 
-// mine the contract interaction transaction
-await testWeave.mine();
+// getting the winston (wei) present in address
+const winston= await arweave.wallets.getBalance(paddress);
+console.log(`Winston == ${winston}`);
 
-// read the contract after the interact write transaction (the generated wallet should own 5000 tokens)
-const afterTransaction = await readContract(arweave, c);
-console.log(`After interact write: ${JSON.stringify(afterTransaction)}`);
+// getting the AR present in address
+const ar= arweave.ar.winstonToAr(winston);
+console.log(`AR == ${ar}`);
 
+let data = fs.readFileSync('/home/ubuntu/project/arweave/src/components/contract/kyc.js');
+let resumeObject = JSON.parse("/home/ubuntu/project/arweave/src/components/contract/kyc.json");
+
+
+
+
+
+
+
+  // shut down testing environment
+  await arLocal.stop();
+})(); 
