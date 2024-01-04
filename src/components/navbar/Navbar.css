@@ -33,9 +33,9 @@ li {
  text-decoration: underline;
 }
 
-/* .main-nav li.active{
-  background-color: #e40814;
-} */
+.active{
+  color: #e40814;
+}
 
 .logo {
   grid-column: 2/3;

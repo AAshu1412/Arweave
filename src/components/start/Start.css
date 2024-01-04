@@ -17,6 +17,10 @@
   grid-template-columns: 10rem 1fr 10rem;
 }
 
+.active{
+  color: #e40814;
+}
+
 .start-main-nav li:hover{
   color: #e40814;
   text-decoration: underline;

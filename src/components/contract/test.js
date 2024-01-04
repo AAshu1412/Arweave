@@ -8,12 +8,12 @@ import {
 import fs from "fs";
 
 (async () => {
-  const arLocal = new ArLocal();
+  // const arLocal = new ArLocal();
 
-  await arLocal.start();
+  // await arLocal.start();
 
   const key = JSON.parse(
-    readFileSync("/home/ubuntu/project/arweave/wallet.json").toString()
+    fs.readFileSync("/home/ubuntu/project/arweave/wallet.json").toString()
   );
 
   const contract = await createContract({
@@ -57,5 +57,5 @@ import fs from "fs";
 
   console.log(`View Result Of Company Registration == ${viewResult1}`);
 
-  await arLocal.stop();
+  // await arLocal.stop();
 })();
