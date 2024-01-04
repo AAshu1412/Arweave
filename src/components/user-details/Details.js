@@ -9,9 +9,13 @@ const handleInput=(event)=>{
     const name=event.target.name;
     const value=event.target.value;
 console.log(name,value);
-    setUserDetails({...userDetails,company:"ashuuuuuuuuuuuuu"});
-    console.log(userDetails.address);
-    console.log(userDetails.company);
+    setUserDetails({...userDetails,[name]:value});
+    // console.log(userDetails.address);
+    // console.log(userDetails.company);
+
+}
+
+const handleSubmit=()=>{
 
 }
 
@@ -20,15 +24,15 @@ console.log(name,value);
 
     return(<div>
         <Start/>
-             <form>
+             <form onSubmit={handleSubmit}>
             <div>
-                <label htmlFor='user-address'>Enter The User Address : </label>
-                <input type='text' autoComplete='off' value={userDetails.address} onChange={handleInput} name='user-address' id='user-address' placeholder='Wallet Address'></input>
+                <label htmlFor='address'>Enter The User Address : </label>
+                <input type='text' autoComplete='off' value={userDetails.address} onChange={handleInput} name='address' id='address' placeholder='Wallet Address'></input>
             </div>
 
             <div>
-                <label htmlFor='company-name'>Enter The Company Name : </label>
-                <input type='text' autoComplete='off' value={userDetails.company} onChange={handleInput} name='company-name' id='company-name' placeholder='Company Name'></input>
+                <label htmlFor='company'>Enter The Company Name : </label>
+                <input type='text' autoComplete='off' value={userDetails.company} onChange={handleInput} name='company' id='company' placeholder='Company Name'></input>
             </div>
             <button type='submit'>Details</button>
                 </form>
