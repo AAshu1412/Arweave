@@ -10,9 +10,19 @@ function Start() {
           <li>
             <NavLink to="/start/registration">Registration</NavLink>
           </li>
-          <li>User Details</li>
-          <li>Company Registration</li>
-          <li>Access Remove</li>
+          <li>
+            {" "}
+            <NavLink to="/start/user-details">User Details</NavLink>
+          </li>
+          <li>
+            <NavLink to="/start/company-registration">
+              Company Registration
+            </NavLink>
+          </li>
+          <li>
+            {" "}
+            <NavLink to="/start/access-remove">Access Remove</NavLink>
+          </li>
         </ul>
       </div>
     </nav>
