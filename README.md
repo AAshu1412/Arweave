@@ -35,7 +35,21 @@ cd Arweave
 ## Install dependencies
 
 ```bash
+npm install 
+```
+
+```bash
 npm install arweave-wallet-connector
+```
+
+Arlocal is a tool for quickly setting up and running a local Arweave testing environment.
+```bash
+npm install arlocal --save-dev
+```
+
+Arweave Kit combines tools and resources into one easy to use library, to get started building with Arweave.
+```bash
+npm install arweavekit
 ```
 
 # Finally run the webapp
