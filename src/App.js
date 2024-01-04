@@ -15,7 +15,7 @@ function App() {
     // <div>
     //   <div className='back-img'>
     // <Home/>
-    // </div>
+    // </div> 
     // </div>
     <BrowserRouter>
       <Navbar />

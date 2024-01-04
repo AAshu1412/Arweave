@@ -17,6 +17,11 @@
   grid-template-columns: 10rem 1fr 10rem;
 }
 
+.start-main-nav li:hover{
+  color: #e40814;
+  text-decoration: underline;
+}
+
 .start-nav-content {
   grid-column: 2/3;
 }
