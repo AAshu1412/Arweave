@@ -4,6 +4,7 @@ import Navbar from "./components/navbar/Navbar";
 import Home from "./components/home/Home";
 import Start from "/home/ubuntu/project/arweave/src/components/start/Start.js";
 import About from "/home/ubuntu/project/arweave/src/components/about/About.js";
+import Registration from "./components/registration/Registration";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/start" element={<Start />} />
         <Route path="/about" element={<About />} />
+        <Route path="/start/registration" element={<Registration />} />
       </Routes>
     </BrowserRouter>
   );

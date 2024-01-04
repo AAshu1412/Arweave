@@ -1,35 +1,22 @@
-import React from 'react';
+import React from "react";
 import "./Start.css";
+import { NavLink } from "react-router-dom";
 
-
-function Start(){
-
-  
-    return (
-        <div>
-          <nav className="start-main-nav">
-      
+function Start() {
+  return (
+    <nav className="start-main-nav">
       <div className="start-nav-content">
         <ul>
           <li>
-           Registration
+            <NavLink to="/start/registration">Registration</NavLink>
           </li>
-          <li>
-          User Details
-          </li>
-          <li>
-           Company Registration
-          </li>
-          <li>
-          Access Remove
-          </li>
+          <li>User Details</li>
+          <li>Company Registration</li>
+          <li>Access Remove</li>
         </ul>
       </div>
-     
     </nav>
-        </div>
-        
-      );
+  );
 }
 
 export default Start;

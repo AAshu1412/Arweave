@@ -32,7 +32,7 @@ function Navbar() {
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
-          <li>
+          <li>  
             <NavLink to="/start">Start</NavLink>
           </li>
           <li>
