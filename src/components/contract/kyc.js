@@ -104,10 +104,8 @@ export async function handle(state, action) {
       return { state };
     }
 
-    case "getCompDetails":{
-
-    return {result:state.comp};
-    
+    case "getCompDetails": {
+      return { result: state.comp };
     }
 
     default: {
