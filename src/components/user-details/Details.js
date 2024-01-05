@@ -25,6 +25,7 @@ function Details() {
       <div className="details-img">
       <img src="https://i.pinimg.com/564x/01/b0/38/01b0380831048a6dbef6a29fca4c3ee9.jpg" width="508" height="906" alt="me"></img>
       </div>
+      <div className="details-temp">
         <div className="details-form">
       <form onSubmit={handleSubmit} >
         <div>
@@ -55,7 +56,10 @@ function Details() {
         <button type="submit">Details</button>
       </form>
       </div>
-     
+      <div>
+        hiiiiiiiiiiiii
+      </div>
+      </div>
       </div>
     </div>
   );
