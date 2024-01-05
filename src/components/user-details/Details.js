@@ -5,6 +5,7 @@ import "./Details.css";
 
 function Details() {
   const [userDetails, setUserDetails] = useState({ address: "", company: "" });
+  const [getDetails,setGetDetails]=useState({name:"Ashu",age:19,nation:"India",ph_no:1234567890,dl:"DL93832"});
   const handleInput = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -56,8 +57,18 @@ function Details() {
         <button type="submit">Details</button>
       </form>
       </div>
-      <div>
-        hiiiiiiiiiiiii
+      <div className="details-output">
+        <h1>User Details : </h1> <br/>
+        <div>
+           
+                            <h2>Name : {getDetails.name}</h2>
+                            <h2>Age : {getDetails.age}</h2>
+                            <h2>Nation : {getDetails.nation}</h2>
+                            <h2>Phone No. : {getDetails.ph_no}</h2>
+                            <h2>Driving License : {getDetails.dl}</h2>
+                    
+
+        </div>
       </div>
       </div>
       </div>
