@@ -2,15 +2,53 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Work+Sans:wght@200&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto Mono", monospace;
-    /* font-family: 'Work Sans', sans-serif; */
-    color: aliceblue;
-  }
-  
-.details-main{
-    background-color: aqua;
-    
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  /* font-family: 'Work Sans', sans-serif; */
+  color: aliceblue;
+}
+
+.details-main {
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+
+.details-form {
+        background-color: violet;
+    width: 40%;
+    height: 22rem;
+    margin-top  : 100px;
+}
+
+.details-form form{
+    display: flex;
+    flex-direction: column  ;
+    gap: 3.5rem;
+}
+
+.details-form form div{
+    display: flex;
+    flex-direction: column  ;
+    gap: 2rem;
+    align-items: center;
+}
+
+.details-form form div label{
+    font-size: 40px;
+}
+
+.details-form form div input{
+    width: 60%;
+    height: 4vh;
+    border-radius: 8px;
+}
+
+.details-img {
+  width: 508px;
+  height: 906px;
 }

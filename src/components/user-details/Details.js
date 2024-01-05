@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Start from "../start/Start";
+import "./Details.css";
 
 function Details() {
   const [userDetails, setUserDetails] = useState({ address: "", company: "" });
@@ -21,8 +22,11 @@ function Details() {
     <div>
       <Start />
       <div className="details-main">
-        <div>
-      <form onSubmit={handleSubmit}>
+      <div className="details-img">
+      <img src="https://i.pinimg.com/564x/01/b0/38/01b0380831048a6dbef6a29fca4c3ee9.jpg" width="508" height="906" alt="me"></img>
+      </div>
+        <div className="details-form">
+      <form onSubmit={handleSubmit} >
         <div>
           <label htmlFor="address">Enter The User Address : </label>
           <input
@@ -51,9 +55,7 @@ function Details() {
         <button type="submit">Details</button>
       </form>
       </div>
-      <div>
-      <img src="https://i.pinimg.com/564x/01/b0/38/01b0380831048a6dbef6a29fca4c3ee9.jpg" width="508" height="906" alt="me"></img>
-      </div>
+     
       </div>
     </div>
   );
