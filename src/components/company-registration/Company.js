@@ -4,29 +4,20 @@ import Start from '../start/Start';
 import './Company.css';
 
 function Company(){
-    const [userDetails, setUserDetails] = useState({ address: "", company: "" });
-  const [getDetails, setGetDetails] = useState({
-    name: "Ashu",
-    age: 19,
-    nation: "India",
-    ph_no: 1234567890,
-    dl: "DL93832",
-  });
-  const [show, setShow] = useState(false);
+    const [compDetails, setcompDetails] = useState({ name: "", category: "" });
+  
   const handleInput = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     console.log(name, value);
-    setUserDetails({ ...userDetails, [name]: value });
-    // console.log(userDetails.address);
-    // console.log(userDetails.company);
+    setcompDetails({ ...compDetails, [name]: value });
+    // console.log(compDetails.name);
+    // console.log(compDetails.category);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    {
-      show ? setShow(true) : setShow(true);
-    }
+    
   };
 
     return(<div>
@@ -48,7 +39,7 @@ function Company(){
                 <input
                   type="text"
                   autoComplete="off"
-                  value={userDetails.address}
+                  value={compDetails.name}
                   onChange={handleInput}
                   name="name"
                   id="name"
@@ -61,7 +52,7 @@ function Company(){
                 <input
                   type="text"
                   autoComplete="off"
-                  value={userDetails.company}
+                  value={compDetails.category}
                   onChange={handleInput}
                   name="category"
                   id="category"
