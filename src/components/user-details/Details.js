@@ -47,9 +47,9 @@ function Details() {
       <div className="details-main">
         <div className="details-img">
           <img
-            src="https://i.pinimg.com/564x/01/b0/38/01b0380831048a6dbef6a29fca4c3ee9.jpg"
+            src="https://i.pinimg.com/564x/af/10/e4/af10e49e35aa90ef04b69ff30787ea3f.jpg"
             width="508"
-            height="906"
+            height="902.5"
             alt="me"
           ></img>
         </div>

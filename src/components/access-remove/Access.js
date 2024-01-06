@@ -26,9 +26,9 @@ function Access() {
       <div className="access-main">
         <div className="access-img">
           <img
-            src="https://i.pinimg.com/564x/3f/54/98/3f5498a8b6b8111ba41d2ccf388c7970.jpg"
+            src="https://i.pinimg.com/564x/dd/df/3b/dddf3bf1f1a39a1584865dad9ff0b0c3.jpg"
             width="508"
-            height="685.75"
+            height="508"
             alt="me"
           ></img>
         </div>
