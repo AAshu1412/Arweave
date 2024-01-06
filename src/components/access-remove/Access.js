@@ -4,20 +4,20 @@ import Start from "../start/Start";
 import "./Access.css";
 
 function Access() {
-  const [compDetails, setcompDetails] = useState({ name: "", category: "" });
+  const [comp, setComp] = useState("");
 
   const handleInput = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     console.log(name, value);
-    setcompDetails({ ...compDetails, [name]: value });
+    setComp(value);
     // console.log(compDetails.name);
     // console.log(compDetails.category);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Submit button is working!");
+    console.log("Remove button is working!");
   };
 
   return (
@@ -40,7 +40,7 @@ function Access() {
               <input
                 type="text"
                 autoComplete="off"
-                value={compDetails.name}
+                value={comp}
                 onChange={handleInput}
                 name="name"
                 id="name"
