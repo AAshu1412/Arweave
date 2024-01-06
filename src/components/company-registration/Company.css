@@ -18,10 +18,8 @@
   /* align-items: center; */
 }
 
-
-
 .company-form {
-  background-color: violet;
+  /* background-color: violet; */
   width: 40%;
   height: 27rem;
   margin-top: 75px;
@@ -69,5 +67,9 @@
 
 .company-img {
   width: 508px;
-  height: 906px;
+  height: 685.75px;
+}
+
+.company-img img {
+  border-radius: 20px;
 }

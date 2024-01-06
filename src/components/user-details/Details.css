@@ -89,3 +89,7 @@
   width: 508px;
   height: 906px;
 }
+
+.details-img img {
+  border-radius: 20px;
+}
