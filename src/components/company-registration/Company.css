@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;1,700&family=Work+Sans:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Work+Sans:wght@200&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  /* font-family: 'Work Sans', sans-serif; */
+  color: aliceblue;
+}
+
+.company-main {
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* align-items: center; */
+}
+
+
+
+.company-form {
+  /* background-color: violet; */
+  width: 40%;
+  height: 25rem;
+  margin-top: 75px;
+}
+
+.company-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.company-form form button {
+  background-color: #e40814;
+  color: #010001;
+  width: 250px;
+  height: 45px;
+  font-size: 1.2rem;
+  border-style: solid;
+  border-color: #010001;
+  border-radius: 12px;
+  font-weight: bolder;
+}
+
+.company-form form div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+  align-items: center;
+}
+
+.company-form form div label {
+  font-size: 40px;
+}
+
+.company-form form div input {
+  width: 75%;
+  height: 4vh;
+  border-radius: 8px;
+  color: black;
+  border-style: solid;
+  border-color: #010001;
+}
+
+.company-img {
+  width: 508px;
+  height: 906px;
+}
