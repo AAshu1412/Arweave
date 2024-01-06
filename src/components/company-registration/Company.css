@@ -44,6 +44,10 @@
   font-weight: bolder;
 }
 
+.company-form form button:hover{
+  cursor: pointer;
+}
+
 .company-form form div {
   display: flex;
   flex-direction: column;

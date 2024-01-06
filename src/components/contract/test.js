@@ -18,9 +18,9 @@ import fs from "fs";
 
   const contract = await createContract({
     wallet: key,
-    initialState: fs.readFileSync(
+    initialState: JSON.parse(fs.readFileSync(
       "/home/ubuntu/project/arweave/src/components/contract/kyc.json",
-      "utf-8"
+      "utf-8")
     ),
     contractSource: fs.readFileSync(
       "/home/ubuntu/project/arweave/src/components/contract/kyc.js"

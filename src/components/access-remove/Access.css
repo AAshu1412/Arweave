@@ -10,7 +10,7 @@
   color: aliceblue;
 }
 
-.details-main {
+.access-main {
   /* background-color: aqua; */
   display: flex;
   flex-direction: row;
@@ -18,29 +18,21 @@
   /* align-items: center; */
 }
 
-.details-temp {
-  width: 40%;
-
-  display: flex;
-  flex-direction: column;
-  gap: 80px;
-}
-
-.details-form {
+.access-form {
   /* background-color: violet; */
-  width: 100%;
+  width: 40%;
   height: 27rem;
   margin-top: 75px;
 }
 
-.details-form form {
+.access-form form {
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
   align-items: center;
 }
 
-.details-form form button {
+.access-form form button {
   background-color: #e40814;
   color: #010001;
   width: 250px;
@@ -52,11 +44,11 @@
   font-weight: bolder;
 }
 
-.details-form form button:hover{
+.access-form form button:hover{
   cursor: pointer;
 }
 
-.details-form form div {
+.access-form form div {
   display: flex;
   flex-direction: column;
 
@@ -64,11 +56,11 @@
   align-items: center;
 }
 
-.details-form form div label {
+.access-form form div label {
   font-size: 40px;
 }
 
-.details-form form div input {
+.access-form form div input {
   width: 75%;
   height: 4vh;
   border-radius: 8px;
@@ -77,23 +69,11 @@
   border-color: #010001;
 }
 
-.details-output {
-  width: 100%;
-}
-
-.output {
-  /* background-color: aqua; */
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.details-img {
+.access-img {
   width: 508px;
-  height: 906px;
+  height: 685.75px;
 }
 
-.details-img img {
+.access-img img {
   border-radius: 20px;
 }
