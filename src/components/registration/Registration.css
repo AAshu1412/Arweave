@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;1,700&family=Work+Sans:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Work+Sans:wght@200&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+  /* font-family: 'Work Sans', sans-serif; */
+  color: aliceblue;
+}
+
+.registration-main{
+ display: flex;
+ flex-direction: row;
+}
+
+.registration-comp{
+    /* background-color: red; */
+    width:29.688rem; 
+    height: 10.063rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+    gap: 1.8rem;
+    box-sizing: border-box;
+    border: 1px solid aliceblue;
+    border-radius: 10px;
+    padding: 20px 30px 20px 30px;
+}
+
+.registration-comp-sub {
+    /* background-color: blueviolet; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+    gap: 1rem ;
+}
+
