@@ -3,6 +3,15 @@ import Start from '../start/Start';
 import './Registration.css';
 
 function Registration(){
+
+    const handleInput=(event)=>{
+  
+    }
+
+const handleSubmit=()=>{
+    console.log("dijqioqeo");
+}
+
     return(<div>
         <Start/>
             <div className='registration-main'>
@@ -15,7 +24,22 @@ function Registration(){
                     
                 </div>
                 <div className='registration-user'>
-                   
+                <form onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="name">Enter Your Name : </label>
+              <input
+                type="text"
+                autoComplete="off"
+                value="name"
+                onChange={handleInput}
+                name="name"
+                id="name"
+                placeholder="Name"
+              ></input>
+            </div>  
+
+            <button type="submit">Submit</button>
+          </form>
                 </div>
             </div>
     </div>);
