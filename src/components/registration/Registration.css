@@ -13,6 +13,7 @@
 .registration-main{
  display: flex;
  flex-direction: row;
+ justify-content: space-evenly;
 }
 
 .registration-comp{
@@ -51,12 +52,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 4rem;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 
 .registration-user form div{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
+    /* background-color: aqua  ; */
 }
 
 .registration-user form button{
@@ -69,6 +78,19 @@
   border-color: #010001;
   border-radius: 12px;
   font-weight: bolder;
+}
+
+.registration-user form div label {
+    font-size: 40px;
+  }
+  
+.registration-user form div input{
+    width: 75%;
+  height: 4vh;
+  border-radius: 8px;
+  color: black;
+  border-style: solid;
+  border-color: #010001;
 }
 
 .registration-user form button:hover{
