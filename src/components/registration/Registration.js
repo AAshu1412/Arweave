@@ -23,11 +23,11 @@ const handleSubmit=()=>{
     return(<div>
         <Start/>
             <div className='registration-main'>
-                <div>
+                <div className='registration-comp-head'>
                     {
                         compDetails.map((value,key)=>{
 return(
-    <div className='registration-comp-head'>
+  
          <div className='registration-comp'>
                      <h2>{value.name}</h2>
                      <div className='registration-comp-sub'>
@@ -36,7 +36,7 @@ return(
                      </div>
                     
                 </div>
-    </div>
+    
    
 );
                         })
