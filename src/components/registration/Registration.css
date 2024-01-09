@@ -52,6 +52,14 @@
     box-sizing: border-box;
     border: 1px solid aliceblue;
     border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+}
+
+.registration-user h1{
+    text-align: center;
+    padding-top: 5%;
+    border-bottom: 5px solid #e40814 ;
 }
 
 .registration-user form{

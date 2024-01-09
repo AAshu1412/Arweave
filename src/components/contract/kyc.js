@@ -2,6 +2,7 @@ export async function handle(state, action) {
   const company = state.company; // state variable
   const people = state.people; // state variable
   const map1 = state.map1; // state variable
+  const map2 = state.map2; // state variable
   const num1 = state.num1; // state variable
 
   const input = action.input;
@@ -28,7 +29,7 @@ export async function handle(state, action) {
         throw new ContractError("Please enter the driving license number");
       }
 
-      if (!Number.isInteger(_uploadKyc_ph && _uploadKyc_age)) {
+      if (!Number.isInteger(kyc.ph_no && kyc.age)) {
         throw new ContractError(
           'Invalid value for "age and phone number". Must be an integer.'
         );
@@ -47,7 +48,6 @@ export async function handle(state, action) {
       state.people[comp][comp_id] = kyc;
       state.map1[key] = state.people[comp][comp_id];
       state.people[comp]++;
-
       return { state };
     }
 
@@ -62,8 +62,9 @@ export async function handle(state, action) {
       }
       comp.address = caller;
 
-      state.company[num2] = comp;
-      num2++;
+      state.map2[caller] = comp.name;
+
+      state.company.push(comp);
 
       return { state };
     }
@@ -106,6 +107,11 @@ export async function handle(state, action) {
 
     case "getCompDetails": {
       return { result: state.comp };
+    }
+
+    case "getUser": {
+      const comp_name = state.map[caller];
+      return { result: state.people[comp_name] };
     }
 
     default: {
