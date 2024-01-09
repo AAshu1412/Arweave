@@ -1,8 +1,16 @@
 import React from 'react';
+import { useState } from 'react';
 import Start from '../start/Start';
 import './Registration.css';
 
 function Registration(){
+
+    const [compDetails,setCompDetails]=useState([{
+        name:"HDFC",category:"Bank1",address:"yWEDs-sho-5Ka7ql_Ov71GNFdHqLspekxfhAo1bcqtU"
+    },{
+        name:"SBI",category:"Bank2",address:"yWEDs-sho-5Ka7ql_Ov71GNFdHqLspekxfhAo1bcqtU"
+    }]);
+
 
     const handleInput=(event)=>{
   
@@ -15,14 +23,27 @@ const handleSubmit=()=>{
     return(<div>
         <Start/>
             <div className='registration-main'>
-                <div className='registration-comp'>
-                     <h2>HDFC</h2>
+                <div>
+                    {
+                        compDetails.map((value,key)=>{
+return(
+    <div className='registration-comp-head'>
+         <div className='registration-comp'>
+                     <h2>{value.name}</h2>
                      <div className='registration-comp-sub'>
-                     <h4>Bank</h4>
-                     <h4>yWEDs-sho-5Ka7ql_Ov71GNFdHqLspekxfhAo1bcqtU</h4>
+                     <h4>{value.category}</h4>
+                     <h4>{value.address}</h4>
                      </div>
                     
                 </div>
+    </div>
+   
+);
+                        })
+                    }
+                
+                </div>
+             
                 <div className='registration-user'>
                 <form onSubmit={handleSubmit}>
             <div>

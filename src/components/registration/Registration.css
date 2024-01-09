@@ -16,6 +16,12 @@
  justify-content: space-evenly;
 }
 
+.registration-comp-head{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
 .registration-comp{
     /* background-color: red; */
     width:29.688rem; 
@@ -49,7 +55,7 @@
 }
 
 .registration-user form{
-    display: flex;
+    display: flex;  
     flex-direction: column;
     align-items: center;
     gap: 4rem;
