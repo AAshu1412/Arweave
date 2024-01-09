@@ -17,7 +17,16 @@ function Registration() {
     },
   ]);
 
-  const handleInput = (event) => {};
+  const [user,setUser]=useState({name:"",age:undefined,nation:"",ph_no:undefined,dl:""});
+  const [compName,setCompName]=useState("CAoi");
+
+
+  const handleInput = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    console.log(name, value);
+    setUser({ ...user, [name]: value });
+  };
 
   const handleSubmit = () => {
     console.log("dijqioqeo");
@@ -30,26 +39,26 @@ function Registration() {
         <div className="registration-comp-head">
           {compDetails.map((value, key) => {
             return (
-              <div className="registration-comp">
+              <button onClick={()=>setCompName(value.name)} className="registration-comp">
                 <h2>{value.name}</h2>
                 <div className="registration-comp-sub">
-                  <h4>{value.category}</h4>
-                  <h4>{value.address}</h4>
+                  <h3>{value.category}</h3>
+                  <h3>{value.address}</h3>
                 </div>
-              </div>
+              </button>
             );
           })}
         </div>
 
         <div className="registration-user">
-            <h1>BANK</h1>
+            <h1>{compName}</h1>
           <form onSubmit={handleSubmit}>
             <div>
               <label htmlFor="name">Enter Your Name : </label>
               <input
                 type="text"
                 autoComplete="off"
-                value="name"
+                value={user.name}
                 onChange={handleInput}
                 name="name"
                 id="name"
@@ -61,7 +70,7 @@ function Registration() {
               <input
                 type="text"
                 autoComplete="off"
-                value="age"
+                value={user.age}
                 onChange={handleInput}
                 name="age"
                 id="age"
@@ -73,7 +82,7 @@ function Registration() {
               <input
                 type="text"
                 autoComplete="off"
-                value="nation"
+                value={user.nation}
                 onChange={handleInput}
                 name="nation"
                 id="nation"
@@ -85,7 +94,7 @@ function Registration() {
               <input
                 type="text"
                 autoComplete="off"
-                value="ph_no"
+                value={user.ph_no}
                 onChange={handleInput}
                 name="ph_no"
                 id="ph_no"
@@ -97,7 +106,7 @@ function Registration() {
               <input
                 type="text"
                 autoComplete="off"
-                value="dl"
+                value={user.dl}
                 onChange={handleInput}
                 name="dl"
                 id="dl"

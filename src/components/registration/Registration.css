@@ -26,6 +26,7 @@
     /* background-color: red; */
     width:29.688rem; 
     height: 10.063rem;
+    background-color:#010001;
     display: flex;
     flex-direction: column;
     /* justify-content: space-around; */
@@ -35,6 +36,11 @@
     border: 1px solid aliceblue;
     border-radius: 10px;
     padding: 20px 30px 20px 30px;
+}
+
+.registration-comp:hover{
+    cursor: pointer;
+    background-color: #e40814;  
 }
 
 .registration-comp-sub {
@@ -59,7 +65,10 @@
 .registration-user h1{
     text-align: center;
     padding-top: 5%;
-    border-bottom: 5px solid #e40814 ;
+    text-decoration: underline;
+    text-decoration-color: #e40814; 
+    text-decoration-thickness: 5px;
+    /* border-bottom: 5px solid #e40814 ; */
 }
 
 .registration-user form{
