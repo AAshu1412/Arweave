@@ -13,17 +13,17 @@ import fs from "fs";
   // await arLocal.start();
 
   const key = JSON.parse(
-    fs.readFileSync("/home/ubuntu/project/arweave/wallet.json").toString()
+    fs.readFileSync("src/components/contract/wallet.json").toString()
   );
 
   const contract = await createContract({
     wallet: key,
     initialState: JSON.parse(fs.readFileSync(
-      "/home/ubuntu/project/arweave/src/components/contract/kyc.json",
+      "src/components/contract/kyc.json",
       "utf-8")
     ),
     contractSource: fs.readFileSync(
-      "/home/ubuntu/project/arweave/src/components/contract/kyc.js"
+      "src/components/contract/kyc.js"
     ),
     environment: "local",
   });

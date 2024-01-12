@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.css";
-import Navbar from "/home/ubuntu/project/arweave/src/components/navbar/Navbar.js";
-import home1 from "/home/ubuntu/project/arweave/src/assets/home.png";
+import Navbar from "../navbar/Navbar.js";
+import home1 from "../.././assets/home.png";
 
 function Home() {
   return (
