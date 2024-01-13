@@ -13,7 +13,7 @@ import fs from "fs";
   // await arLocal.start();
 
   const key = JSON.parse(
-    fs.readFileSync("src/components/contract/wallet.json").toString()
+    fs.readFileSync("wallet.json").toString()
   );
 
   const contract = await createContract({
