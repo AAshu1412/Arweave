@@ -1,4 +1,4 @@
-import ArLocal from "arlocal";
+// import ArLocal from "arlocal";
 import {
   createContract,
   writeContract,
@@ -7,7 +7,7 @@ import {
 } from "arweavekit/contract";
 import fs from "fs";
 
-(async () => {
+// (async () => {
   // const arLocal = new ArLocal();
 
   // await arLocal.start();
@@ -18,17 +18,17 @@ import fs from "fs";
 
   const contract = await createContract({
     wallet: key,
-    initialState: JSON.parse(fs.readFileSync(
-      "src/components/contract/kyc.json",
+    initialState: JSON.stringify(JSON.parse(fs.readFileSync(
+      "kyc.json",
       "utf-8")
-    ),
+    )),
     contractSource: fs.readFileSync(
-      "src/components/contract/kyc.js"
+      "kyc.js","utf-8"
     ),
     environment: "local",
   });
 
-  console.log(`createcontract == ${contract}`);
+  // console.log(`createcontract == ${contract}`);
 
   const writeResult1 = await writeContract({
     environment: "local",
@@ -39,7 +39,7 @@ import fs from "fs";
       comp: { name: "HDFC", category: "Bank" },
     },
   });
-  console.log(`Company Registration == ${writeResult1}`);
+  // console.log(`Company Registration == ${writeResult1}`);
 
   const readResult1 = await readContractState({
     environment: "local",
@@ -55,7 +55,7 @@ import fs from "fs";
     options: { function: "getCompDetails" },
   });
 
-  console.log(`View Result Of Company Registration == ${viewResult1}`);
+  // console.log(`View Result Of Company Registration == ${viewResult1}`);
 
   // await arLocal.stop();
-})();
+// })();
