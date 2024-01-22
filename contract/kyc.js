@@ -62,6 +62,7 @@ export function handle(state, action) {
     comp.address = caller;
 
     state.map2[caller] = comp.name;
+    // state.company[0]=comp;
 
     state.company.push(comp);
 

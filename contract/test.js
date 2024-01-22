@@ -28,7 +28,7 @@ import fs from "fs";
     environment: "local",
   });
 
-  // console.log(`createcontract == ${contract}`);
+  console.log(`createcontract == ${contract}`);
 
   const writeResult1 = await writeContract({
     environment: "local",
@@ -39,7 +39,7 @@ import fs from "fs";
       comp: { name: "HDFC", category: "Bank" },
     },
   });
-  // console.log(`Company Registration == ${writeResult1}`);
+  console.log(`Company Registration == ${writeResult1}`);
 
   const readResult1 = await readContractState({
     environment: "local",
@@ -55,7 +55,7 @@ import fs from "fs";
     options: { function: "getCompDetails" },
   });
 
-  // console.log(`View Result Of Company Registration == ${viewResult1}`);
+  console.log(`View Result Of Company Registration == ${viewResult1}`);
 
   // await arLocal.stop();
 // })();
