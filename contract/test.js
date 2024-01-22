@@ -7,7 +7,7 @@ import {
 } from "arweavekit/contract";
 import fs from "fs";
 
-// (async () => {
+(async () => {
   // const arLocal = new ArLocal();
 
   // await arLocal.start();
@@ -16,23 +16,17 @@ import fs from "fs";
     fs.readFileSync("wallet.json").toString()
   );
 
-  const contract = await createContract({
-    wallet: key,
-    initialState: JSON.stringify(JSON.parse(fs.readFileSync(
-      "kyc.json",
-      "utf-8")
-    )),
-    contractSource: fs.readFileSync(
-      "kyc.js","utf-8"
-    ),
-    environment: "local",
-  });
+ const data=fs.readFileSync("./contract_data.json");
+ const conractAddress = JSON.parse(data);
 
-  console.log(`createcontract == ${contract}`);
+//  console.log(conractAddress);
+
+const contract_address=conractAddress.contract._contractTxId;
+// console.log(contract_address);
 
   const writeResult1 = await writeContract({
     environment: "local",
-    contractTxId: contract.contractTxId,
+    contractTxId: contract_address,
     wallet: key,
     options: {
       function: "company_reg",
@@ -43,14 +37,14 @@ import fs from "fs";
 
   const readResult1 = await readContractState({
     environment: "local",
-    contractTxId: contract.contractTxId,
+    contractTxId: contract_address,
   });
 
   console.log(`Read Result == ${readResult1}`);
 
   const viewResult1 = await viewContractState({
     environment: "local",
-    contractTxId: contract.contractTxId,
+    contractTxId: contract_address,
     wallet: key,
     options: { function: "getCompDetails" },
   });
@@ -58,4 +52,4 @@ import fs from "fs";
   console.log(`View Result Of Company Registration == ${viewResult1}`);
 
   // await arLocal.stop();
-// })();
+})();
