@@ -59,7 +59,7 @@
   "license": "ISC",
   "devDependencies": {
     "arconnect": "^1.0.3",
-    "arlocal": "^1.1.64"
+    "arlocal": "^1.1.62"
   },
   "keywords": []
 }

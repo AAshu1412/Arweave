@@ -106,7 +106,7 @@ export function handle(state, action) {
   }
 
   if (action.input.function === "getCompDetails") {
-    return { result: state.comp };
+    return { result: state.company };
   }
   if (action.input.function === "getUser") {
     const comp_name = state.map[caller];

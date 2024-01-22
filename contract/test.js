@@ -1,4 +1,3 @@
-// import ArLocal from "arlocal";
 import {
   createContract,
   writeContract,
@@ -8,21 +7,15 @@ import {
 import fs from "fs";
 
 (async () => {
-  // const arLocal = new ArLocal();
+  const key = JSON.parse(fs.readFileSync("wallet.json").toString());
 
-  // await arLocal.start();
+  const data = fs.readFileSync("./contract_data.json");
+  const conractAddress = JSON.parse(data);
 
-  const key = JSON.parse(
-    fs.readFileSync("wallet.json").toString()
-  );
+  //  console.log(conractAddress);
 
- const data=fs.readFileSync("./contract_data.json");
- const conractAddress = JSON.parse(data);
-
-//  console.log(conractAddress);
-
-const contract_address=conractAddress.contract._contractTxId;
-// console.log(contract_address);
+  const contract_address = conractAddress.contract._contractTxId;
+  // console.log(contract_address);
 
   const writeResult1 = await writeContract({
     environment: "local",
@@ -33,14 +26,22 @@ const contract_address=conractAddress.contract._contractTxId;
       comp: { name: "HDFC", category: "Bank" },
     },
   });
-  console.log(`Company Registration == ${writeResult1}`);
+  console.log(
+    "-----------------------------------------------------------------------------------------------------"
+  );
+  console.log(`Company Registration == ${JSON.stringify(writeResult1)}`);
+  console.log(
+    "-----------------------------------------------------------------------------------------------------"
+  );
 
   const readResult1 = await readContractState({
     environment: "local",
     contractTxId: contract_address,
   });
+  console.log("-----------------------------------------------------------------------------------------------------");
 
-  console.log(`Read Result == ${readResult1}`);
+  console.log(`Read Result == ${JSON.stringify(readResult1)}`);
+  console.log("-----------------------------------------------------------------------------------------------------");
 
   const viewResult1 = await viewContractState({
     environment: "local",
@@ -48,8 +49,8 @@ const contract_address=conractAddress.contract._contractTxId;
     wallet: key,
     options: { function: "getCompDetails" },
   });
+  console.log("-----------------------------------------------------------------------------------------------------");
 
-  console.log(`View Result Of Company Registration == ${viewResult1}`);
-
-  // await arLocal.stop();
+  console.log(`View Result Of Company Registration == ${JSON.stringify(viewResult1)}`);
+  console.log("-----------------------------------------------------------------------------------------------------");
 })();
